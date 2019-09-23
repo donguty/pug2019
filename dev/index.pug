@@ -5,5 +5,40 @@ html(lang="es")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Pug
+
+        link(rel="stylesheet", href="style.css")
+
+        style. 
+            body {
+                background-color: green;
+            }
     body
-        h1 Hola mundo
+        -const name = 'Carlos'
+        -const numbers = [1,2,3,4,5]
+        -
+            const person = {
+                name: 'Carlos',
+                surname: 'Gutierrez',
+                age: 48
+            }
+
+        p= `hola ${name}`
+
+        p= `${person.name} ${person.surname} tiene ${person.age} años.`
+
+        ul 
+            li= numbers[0]
+            li= numbers[1]
+            li= numbers[2]
+            li= numbers[3]
+            li= numbers[4]
+
+        ul 
+            li= person.name
+            li= person['surname']
+            li= person.age             
+
+        script(src="scripts.js")
+        script. 
+            alert('hola mundo')
+
