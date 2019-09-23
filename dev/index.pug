@@ -6,39 +6,18 @@ html(lang="es")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Pug
 
-        link(rel="stylesheet", href="style.css")
-
-        style. 
-            body {
-                background-color: green;
-            }
     body
-        -const name = 'Carlos'
-        -const numbers = [1,2,3,4,5]
-        -
-            const person = {
-                name: 'Carlos',
-                surname: 'Gutierrez',
-                age: 48
-            }
 
-        p= `hola ${name}`
+        -let username = false
 
-        p= `${person.name} ${person.surname} tiene ${person.age} años.`
+        if username 
+            p Bienvenido usuario
+        else if username == null
+            p Usuario no existe
+        else
+            p Registrese para continuar
 
-        ul 
-            li= numbers[0]
-            li= numbers[1]
-            li= numbers[2]
-            li= numbers[3]
-            li= numbers[4]
+        p(class= username? 'registered' : 'unregistered')
 
-        ul 
-            li= person.name
-            li= person['surname']
-            li= person.age             
-
-        script(src="scripts.js")
-        script. 
-            alert('hola mundo')
-
+        unless username
+            p Registrese para continuar
