@@ -8,6 +8,7 @@ const browserSync = require('browser-sync').create()
 
 gulp.task('pug', () => {
   return gulp.src('./dev/*.pug')
+    .pipe(plumber())
     .pipe(pug({
       pretty: true
     }))

@@ -7,17 +7,39 @@ html(lang="es")
         title Pug
 
     body
+        -const names = ['carlos', 'mar', 'eva', 'sergio']
+        //- -const names = []
 
-        -let username = false
+        //- each name in names
+        //- p= `${name.charAt(0).toUpperCase()}${name.substring(1)}`
 
-        if username 
-            p Bienvenido usuario
-        else if username == null
-            p Usuario no existe
-        else
-            p Registrese para continuar
+        //- each name in names.length ? names : ['No names']
+        //- p= `${name.charAt(0).toUpperCase()}${name.substring(1)}`
 
-        p(class= username? 'registered' : 'unregistered')
+        //- each name in names
+        //-     p= `${name.charAt(0).toUpperCase()}${name.substring(1)}`
+        //- else
+        //-     span No names
 
-        unless username
-            p Registrese para continuar
+        -
+            const person = {
+                name: 'Carlos',
+                email: 'carlos@gmail.com'
+            }
+
+        each value, key in person
+            p= `${key} : ${value}`
+
+        each value, index in names
+            p= `${index} : ${value}`
+
+        -let n=0
+        ul
+            while n<5
+                li= n++
+        
+
+        
+        
+            
+        
