@@ -7,7 +7,7 @@ const browserSync = require('browser-sync').create()
 
 
 gulp.task('pug', () => {
-  return gulp.src('./dev/*.pug')
+  return gulp.src('./dev/pages/*.pug')
     .pipe(plumber())
     .pipe(pug({
       pretty: true
@@ -20,5 +20,5 @@ gulp.task('default', () => {
     server: './public'
   })
   //PUG
-  gulp.watch('./dev/*.pug', gulp.series('pug')).on('change', browserSync.reload)
+  gulp.watch('./dev/**/*.pug', gulp.series('pug')).on('change', browserSync.reload)
 })
